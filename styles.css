@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8f5e9; /* Light green background */
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background: #ffffff; /* White container */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+h2 {
+  color: #388e3c; /* Green heading */
+  text-align: center;
+}
+
+.availability-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.availability-row span {
+  width: 180px;
+  font-weight: bold;
+  color: #2e7d32; /* Dark green for the date labels */
+}
+
+.time-button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: 1px solid #81c784; /* Light green border */
+  border-radius: 6px;
+  background-color: #fff; /* Light green button */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.time-button:hover {
+  background-color: #66bb6a; /* Slightly darker green on hover */
+}
+
+.time-button.selected {
+  background-color: #81c784; /* Selected button color */
+  color: white;
+  border-color: #66bb6a;
+}
+
+.time-button.disabled {
+  background-color: #e0e0e0; /* Light gray for disabled buttons */
+  cursor: not-allowed;
+  color: #757575; /* Darker gray text to improve visibility */
+}
+
+.button {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px;
+  background-color: #43a047; /* Medium green button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.custom-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #81c784; /* Soft green border */
+  background-color: #fff;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+p {
+  margin-top: 0;
+}
+
+.error-message {
+  color: #f44336; /* Red for error messages */
+  font-size: 14px;
+  margin: 5px 0 15px;
+  display: none;
+}
+
+/* Dark Mode */
+body {
+  background-color: #e8f5e9; /* Light green background */
+  color: #333;
+}
+
+.container {
+  background: #ffffff; /* White container */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #388e3c; /* Green heading */
+}
+
+.time-button {
+  border: 1px solid #81c784; /* Light green border */
+}
+
+.time-button.selected {
+  background-color: #81c784; /* Selected button color */
+  color: white;
+  border-color: #66bb6a;
+}
+
+.button {
+  background-color: #43a047; /* Medium green button */
+  color: white;
+}
+
+.button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.error-message {
+  color: #f44336; /* Red for error messages */
+}
