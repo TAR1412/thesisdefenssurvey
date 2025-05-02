@@ -6,7 +6,6 @@
   <title>Thesis Defense Availability Survey</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <div class="container">
@@ -33,11 +32,19 @@
     <div id="calendar"></div>
     <div id="time-error" class="error-message">Please select at least one time slot.</div>
 
+    <fieldset style="margin-top: 20px">
+      <legend>Preferred mode of attendance:</legend>
+      <label><input type="radio" name="entry.456358814" value="Onsite"> Onsite</label><br>
+      <label><input type="radio" name="entry.456358814" value="Online (Zoom meeting)"> Online (Zoom meeting)</label>
+      <div id="mode-error" class="error-message">Please select your attendance mode.</div>
+    </fieldset>
+
     <button class="button" onclick="submitForm()">Submit Availability</button>
   </div>
 
   <form id="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScI619g3IMdwA4PAFNQezmX1jiUllHZSuylJj_xQwUuRCA6xg/formResponse" method="POST" target="_blank" style="display:none">
     <input type="hidden" name="entry.1428329873" id="professorInput">
+    <input type="hidden" name="entry.456358814" id="modeInput">
   </form>
 
   <script>
@@ -98,8 +105,10 @@
 
     function submitForm() {
       const professor = document.getElementById('committee').value;
+      const mode = document.querySelector('input[name="entry.456358814"]:checked');
       const profError = document.getElementById('prof-error');
       const timeError = document.getElementById('time-error');
+      const modeError = document.getElementById('mode-error');
 
       let hasError = false;
 
@@ -108,6 +117,13 @@
         hasError = true;
       } else {
         profError.style.display = 'none';
+      }
+
+      if (!mode) {
+        modeError.style.display = 'block';
+        hasError = true;
+      } else {
+        modeError.style.display = 'none';
       }
 
       if (selectedSlots.size === 0) {
@@ -120,6 +136,7 @@
       if (hasError) return;
 
       document.getElementById('professorInput').value = professor;
+      document.getElementById('modeInput').value = mode.value;
 
       const form = document.getElementById('form');
       const existingEntries = document.querySelectorAll('input[name="entry.1726107767"]');
